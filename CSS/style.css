@@ -1,0 +1,1508 @@
+/* ================= SECTION: GLOBALS & RESET ================= */
+@font-face {
+    font-family: 'Bold';
+    src: url('../fonts/HighriseFont-Bold-Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nome';
+    src: url('../fonts/Oldschool Tag.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================= SECTION: NAVIGATION & SCROLL ================= */
+.navegacao {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); 
+    width: auto;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    z-index: 1000;
+    background-color: rgba(30, 30, 30, 0.65); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid rgba(229, 173, 198, 0.2);
+}
+
+.menu {  
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.menu-link a{
+    text-decoration: none;
+    color: #e5adc6;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.menu-link a::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #e5adc6;
+    transition: 0.3s;
+}
+
+.menu-link a:hover::after {
+    width: 100%;
+}
+
+.scroll {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.home, .sobremim, .projetos {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+/* ================= SECTION: HOME ================= */
+.home {
+    background-color: #1b1b1b;
+    position: relative;
+    min-height: 100vh; 
+    padding: 60px;
+    overflow: hidden;
+}
+
+
+.texto-esquerda {
+    font-size: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: -50px; 
+    color: rgb(251, 77, 138);
+    font-family: 'Bold', 'Anton', 'Archivo Black', sans-serif;
+}
+
+.home .titulos-nome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: -90px; 
+    color: rgb(251, 77, 138);
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.6));
+}
+ 
+.home .texto-guilherme {
+    font-size: 80px;
+    line-height: 150px;
+    letter-spacing: 10px;
+    text-align: left;
+    font-family: 'nome', 'Anton', 'Archivo Black', sans-serif;
+    margin-left: 60px;
+    margin-top: 20px;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.6));
+}
+
+.home .GuiFoto {
+    position: absolute;
+    top: 50%; 
+    left: 58%; 
+    transform: translate(-50%, -45%);
+    width: 45vw;
+    z-index: 10;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.6));
+}
+
+.descricao-esquerda {
+    color: rgb(245, 145, 180);
+    font-size: 20px;
+    position: absolute;
+    bottom: 80px;
+    left: 130px;
+    max-width: 550px; 
+    z-index: 11;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+}
+
+.descricao-direita {
+    color: rgb(245, 145, 180);
+    font-size: 20px;
+    position: absolute;
+    bottom: 100px; 
+    right: 60px; 
+    max-width: 550px; 
+    z-index: 11;
+    text-align: right; 
+}
+
+/* ================= SECTION: SOBRE MIM ================= */
+.sobremim {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    overflow: hidden;
+}
+
+.lado-esquerdo {
+    width: 50%;
+    background-color: #e5adc6;
+    position: relative;
+    padding: 60px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.sobremim .titulo-sobremim {
+    font-size: 250px; 
+    letter-spacing: 5px;
+    line-height: 120px; 
+    font-family: 'Bold', 'Anton', sans-serif;
+    color: #1e1e1e;
+    position: relative;
+    z-index: 11;
+}
+
+.caixa-texto {
+    position: relative; 
+    z-index: 11; 
+    background-color: transparent; 
+    border: 2px solid #1e1e1e;
+    color: #1e1e1e; 
+    padding: 30px; 
+    margin-top: 80px; 
+    max-width: 90%;
+    border-radius: 10px; 
+}
+
+.caixa-texto p {
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 15px; 
+    line-height: 1.6; 
+    text-transform: uppercase; 
+    text-align: left; 
+}
+
+.sobremim .GuiFoto2 {
+    position: absolute;
+    bottom: -20px;
+    left: -200px;
+    width: 100%; 
+    max-width: 900px;
+    z-index: 11;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.6));
+}
+
+.lado-direito {
+    width: 50%;
+    background-color: #1e1e1e;
+    padding: 60px 80px;
+    color: #e5adc6;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-direito, .titulo-contato {
+    font-family: 'Bold', 'Anton', sans-serif;
+    font-size: 100px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.titulo-contato {
+    font-size: 40px;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.grade-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    color: white;
+}
+
+.grade-skills p {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.area-contato {
+    display: flex;
+    gap: 30px;
+}
+
+.form-email {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-email textarea {
+    background-color: #4a4a4a;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    height: 150px;
+    resize: none;
+}
+
+.btn-enviar {
+    background-color: #e5adc6;
+    color: #1e1e1e;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.infos-contato {
+    text-align: right;
+    margin-top: 20px;
+    color: white;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.infos-contato .link-contato a {
+    color: #ffffff; 
+}
+
+/* ================= SECTION: PROJETOS ================= */
+
+.projetos {
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #1b1b1b;
+    padding: 35px 70px 130px;
+    color: #ffffff;
+}
+
+.texto-fundo-projetos {
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    font-family: 'Bold', 'Anton', sans-serif;
+    font-size: 550px;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(251, 77, 138, 0.08);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+.cabecalho-projetos {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 35px;
+}
+
+.projetos-subtitulo {
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.titulo-projetos {
+    font-family: 'Bold', 'Anton', 'Archivo Black', sans-serif;
+    font-size: clamp(110px, 13vw, 220px);
+    line-height: 0.72;
+    letter-spacing: 4px;
+    color: rgb(251, 77, 138);
+}
+
+.projetos-descricao {
+    margin-bottom: 3px;
+    color: #e5adc6;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: right;
+}
+
+.projetos-caixa {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 35px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.projeto-card {
+    position: relative;
+    background-color: #e5adc6;
+    color: #1b1b1b;
+    border: 2px solid #e5adc6;
+    box-shadow: 12px 12px 0 rgb(251, 77, 138);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.projeto-card:nth-child(1) {
+    transform: rotate(-1deg);
+}
+
+.projeto-card:nth-child(2) {
+    transform: translateY(20px) rotate(1deg);
+}
+
+.projeto-card:nth-child(3) {
+    transform: rotate(-0.8deg);
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px) rotate(0deg);
+    box-shadow: 18px 18px 0 rgb(251, 77, 138);
+}
+
+.projeto-numero {
+    position: absolute;
+    top: -23px;
+    right: 15px;
+    z-index: 5;
+    padding: 6px 13px;
+    background-color: #1b1b1b;
+    border: 2px solid #e5adc6;
+    color: #e5adc6;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 14px;
+}
+
+.projeto-imagem {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 245px;
+    overflow: hidden;
+    background-color: #292929;
+    cursor: pointer;
+}
+
+.projeto-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.05);
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.projeto-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(251, 77, 138, 0.86);
+    color: #1b1b1b;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.seta-projeto {
+    font-size: 28px;
+    line-height: 1;
+    transition: transform 0.35s ease;
+}
+
+.projeto-imagem:hover img {
+    transform: scale(1.08);
+    filter: grayscale(0%) contrast(1);
+}
+
+.projeto-imagem:hover .projeto-overlay {
+    opacity: 1;
+}
+
+.projeto-imagem:hover .seta-projeto {
+    transform: translate(5px, -5px);
+}
+
+.projeto-imagem:focus-visible {
+    outline: 4px solid #ffffff;
+    outline-offset: 4px;
+}
+
+.projeto-imagem:focus-visible .projeto-overlay {
+    opacity: 1;
+}
+
+.projeto-conteudo {
+    min-height: 165px;
+    padding: 20px;
+}
+
+.projeto-conteudo h3 {
+    margin-bottom: 10px;
+    font-family: 'Bold', 'Anton', sans-serif;
+    font-size: 38px;
+    line-height: 1;
+    letter-spacing: 2px;
+    color: #1b1b1b;
+}
+
+.projeto-conteudo p {
+    min-height: 48px;
+    color: #1b1b1b;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.projeto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 16px;
+}
+
+.projeto-tags span {
+    padding: 5px 9px;
+    background-color: #1b1b1b;
+    border: 1px solid #1b1b1b;
+    color: #e5adc6;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.projetos-instrucao {
+    position: relative;
+    z-index: 3;
+    margin-top: 55px;
+    color: #e5adc6;
+    font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+/* ================= RESPONSIVIDADE DOS PROJETOS ================= */
+
+@media (max-width: 1100px) {
+
+    .projetos {
+        padding: 50px 40px 140px;
+    }
+
+    .cabecalho-projetos {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .projetos-descricao {
+        text-align: left;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .projeto-card:nth-child(1),
+    .projeto-card:nth-child(2),
+    .projeto-card:nth-child(3) {
+        transform: rotate(0deg);
+    }
+
+    .projeto-card:hover {
+        transform: translateY(-8px);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .scroll {
+        scroll-snap-type: y proximity;
+    }
+
+    .projetos {
+        padding: 50px 22px 140px;
+    }
+
+    .titulo-projetos {
+        font-size: clamp(75px, 24vw, 120px);
+        line-height: 0.8;
+    }
+
+    .projetos-subtitulo {
+        font-size: 10px;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .projeto-imagem {
+        height: 220px;
+    }
+
+    .projeto-conteudo h3 {
+        font-size: 34px;
+    }
+
+    .texto-fundo-projetos {
+        display: none;
+    }
+}
+
+/* ================================================================
+   RESPONSIVIDADE GERAL
+   Mantém a identidade visual original e adapta apenas proporções,
+   espaçamentos e distribuição dos elementos em telas menores.
+================================================================ */
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ---------- Monitores e notebooks menores ---------- */
+@media (max-width: 1700px) {
+
+    .home {
+        padding: 50px;
+    }
+
+    .texto-esquerda {
+        font-size: clamp(390px, 30vw, 510px);
+        margin-top: -35px;
+        line-height: 0.9;
+        white-space: nowrap;
+    }
+
+    .home .titulos-nome {
+        margin-top: -65px;
+    }
+
+    .home .texto-guilherme {
+        font-size: clamp(60px, 4.5vw, 76px);
+        line-height: 1.25;
+        margin-left: 45px;
+    }
+
+    .home .GuiFoto {
+        width: min(48vw, 780px);
+    }
+
+    .descricao-esquerda {
+        left: 7vw;
+        bottom: 70px;
+        font-size: 17px;
+    }
+
+    .lado-esquerdo {
+        padding: 45px;
+    }
+
+    .sobremim .titulo-sobremim {
+        font-size: clamp(175px, 13vw, 225px);
+        line-height: 0.52;
+    }
+
+    .caixa-texto {
+        margin-top: 60px;
+        padding: 24px;
+    }
+
+    .sobremim .GuiFoto2 {
+        left: -22%;
+        max-width: 820px;
+    }
+
+    .lado-direito {
+        padding: 45px 55px;
+    }
+
+    .titulo-direito {
+        font-size: clamp(75px, 6vw, 95px);
+    }
+
+    .titulo-contato {
+        margin-top: 100px;
+    }
+
+    .projetos {
+        padding-inline: 55px;
+    }
+}
+
+
+/* ---------- Notebooks de 1366 px e tablets grandes ---------- */
+@media (max-width: 1366px) {
+
+    .navegacao {
+        bottom: 20px;
+        padding: 0.85rem 2rem;
+    }
+
+    .menu {
+        gap: 2.2rem;
+    }
+
+    .menu-link a {
+        font-size: 1rem;
+    }
+
+    .home {
+        padding: 40px;
+    }
+
+    .texto-esquerda {
+        font-size: clamp(330px, 29vw, 410px);
+        margin-top: -20px;
+    }
+
+    .home .titulos-nome {
+        margin-top: -45px;
+    }
+
+    .home .texto-guilherme {
+        font-size: clamp(52px, 4.4vw, 66px);
+        margin-left: 35px;
+        letter-spacing: 7px;
+    }
+
+    .home .GuiFoto {
+        left: 59%;
+        width: min(49vw, 680px);
+    }
+
+    .descricao-esquerda {
+        left: 7vw;
+        bottom: 65px;
+        font-size: 15px;
+    }
+
+    .lado-esquerdo {
+        padding: 35px;
+    }
+
+    .sobremim .titulo-sobremim {
+        font-size: clamp(145px, 13vw, 185px);
+        line-height: 0.52;
+    }
+
+    .caixa-texto {
+        max-width: 95%;
+        margin-top: 45px;
+        padding: 20px;
+    }
+
+    .caixa-texto p {
+        font-size: 12px;
+    }
+
+    .sobremim .GuiFoto2 {
+        left: -24%;
+        width: 105%;
+    }
+
+    .lado-direito {
+        padding: 35px 42px;
+    }
+
+    .titulo-direito {
+        margin-bottom: 22px;
+        font-size: clamp(65px, 6vw, 82px);
+    }
+
+    .grade-skills {
+        gap: 15px;
+        font-size: 13px;
+    }
+
+    .titulo-contato {
+        margin-top: 70px;
+        margin-bottom: 22px;
+        font-size: 34px;
+    }
+
+    .form-email textarea {
+        height: 125px;
+    }
+
+    .infos-contato {
+        font-size: 12px;
+    }
+
+    .projetos {
+        padding: 35px 45px 115px;
+    }
+
+    .projetos-caixa {
+        gap: 28px;
+    }
+
+    .projeto-imagem {
+        height: 215px;
+    }
+
+    .projeto-conteudo {
+        min-height: 155px;
+        padding: 17px;
+    }
+
+    .projeto-conteudo h3 {
+        font-size: 33px;
+    }
+}
+
+
+/* ---------- Tablets e telas intermediárias ---------- */
+@media (max-width: 1100px) {
+
+    .navegacao {
+        width: max-content;
+        max-width: calc(100vw - 30px);
+    }
+
+    .home {
+        padding: 35px 30px;
+    }
+
+    .texto-esquerda {
+        font-size: clamp(260px, 30vw, 340px);
+    }
+
+    .home .GuiFoto {
+        width: min(55vw, 610px);
+        left: 61%;
+    }
+
+    .home .texto-guilherme {
+        margin-left: 20px;
+    }
+
+    .descricao-esquerda {
+        left: 5vw;
+        font-size: 14px;
+    }
+
+    .lado-esquerdo {
+        padding: 30px;
+    }
+
+    .sobremim .titulo-sobremim {
+        font-size: clamp(120px, 13.5vw, 155px);
+    }
+
+    .caixa-texto {
+        margin-top: 35px;
+        padding: 18px;
+    }
+
+    .caixa-texto p {
+        font-size: 11px;
+    }
+
+    .sobremim .GuiFoto2 {
+        left: -25%;
+        width: 115%;
+    }
+
+    .lado-direito {
+        padding: 30px;
+    }
+
+    .titulo-direito {
+        font-size: 62px;
+    }
+
+    .grade-skills {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .titulo-contato {
+        margin-top: 45px;
+        font-size: 30px;
+    }
+
+    .form-email textarea {
+        height: 120px;
+    }
+
+    .projetos {
+        padding: 45px 35px 130px;
+    }
+
+    .projetos-caixa {
+        gap: 38px 28px;
+    }
+}
+
+
+/* ---------- Tablets em modo retrato e celulares ---------- */
+@media (max-width: 900px) {
+
+    .scroll {
+        height: auto;
+        overflow-y: visible;
+        scroll-snap-type: y proximity;
+    }
+
+    .home,
+    .sobremim,
+    .projetos {
+        height: auto;
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+    .navegacao {
+        bottom: 16px;
+        padding: 0.8rem 1.4rem;
+    }
+
+    .menu {
+        gap: clamp(1.2rem, 5vw, 2.2rem);
+    }
+
+    .menu-link a {
+        font-size: clamp(0.78rem, 2.4vw, 1rem);
+        white-space: nowrap;
+    }
+
+    /* HOME: mantém título, foto e assinatura sobrepostos */
+    .home {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 35px 25px 110px;
+    }
+
+    .texto-esquerda {
+        font-size: clamp(180px, 34vw, 300px);
+        line-height: 0.78;
+        margin-top: 0;
+        white-space: nowrap;
+    }
+
+    .home .GuiFoto {
+        top: 54%;
+        left: 62%;
+        width: min(78vw, 620px);
+        transform: translate(-50%, -45%);
+    }
+
+    .home .titulos-nome {
+        position: absolute;
+        top: 49%;
+        left: 5vw;
+        margin: 0;
+        z-index: 11;
+    }
+
+    .home .texto-guilherme {
+        margin: 0;
+        font-size: clamp(50px, 9vw, 78px);
+        line-height: 1;
+        letter-spacing: clamp(4px, 1.2vw, 8px);
+    }
+
+    .descricao-esquerda {
+        left: 5vw;
+        bottom: 100px;
+        max-width: 55vw;
+        font-size: clamp(12px, 2vw, 15px);
+    }
+
+    /* SOBRE MIM: preserva os dois blocos, agora empilhados */
+    .sobremim {
+        flex-direction: column;
+        overflow: visible;
+    }
+
+    .lado-esquerdo,
+    .lado-direito {
+        width: 100%;
+    }
+
+    .lado-esquerdo {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 45px 35px 420px;
+    }
+
+    .sobremim .titulo-sobremim {
+        font-size: clamp(145px, 23vw, 205px);
+        line-height: 0.58;
+        white-space: nowrap;
+    }
+
+    .caixa-texto {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 45px;
+        padding: 22px;
+    }
+
+    .caixa-texto p {
+        font-size: clamp(11px, 1.8vw, 14px);
+    }
+
+    .sobremim .GuiFoto2 {
+        bottom: -20px;
+        left: -8%;
+        width: min(82%, 650px);
+        max-width: none;
+    }
+
+    .lado-direito {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 55px 45px 130px;
+    }
+
+    .titulo-direito {
+        font-size: clamp(70px, 13vw, 105px);
+    }
+
+    .grade-skills {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 35px;
+        font-size: 14px;
+    }
+
+    .titulo-contato {
+        margin-top: 85px;
+        font-size: clamp(32px, 6vw, 45px);
+    }
+
+    .form-email textarea {
+        height: 145px;
+    }
+
+    .infos-contato {
+        font-size: 13px;
+    }
+
+    /* PROJETOS */
+    .projetos {
+        min-height: 100vh;
+        padding: 50px 32px 135px;
+    }
+
+    .cabecalho-projetos {
+        gap: 20px;
+    }
+
+    .titulo-projetos {
+        font-size: clamp(100px, 21vw, 175px);
+    }
+
+    .projetos-caixa {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .projeto-imagem {
+        height: clamp(190px, 28vw, 250px);
+    }
+}
+
+
+/* ---------- Celulares ---------- */
+@media (max-width: 700px) {
+
+    .navegacao {
+        width: calc(100% - 24px);
+        padding: 0.75rem 0.9rem;
+    }
+
+    .menu {
+        justify-content: space-evenly;
+        gap: 0.7rem;
+        width: 100%;
+    }
+
+    .menu-link a {
+        font-size: clamp(0.68rem, 3vw, 0.86rem);
+    }
+
+    .home {
+        padding: 25px 16px 105px;
+    }
+
+    .texto-esquerda {
+        font-size: clamp(105px, 29vw, 185px);
+        line-height: 0.82;
+    }
+
+    .home .GuiFoto {
+        top: 55%;
+        left: 64%;
+        width: min(102vw, 540px);
+    }
+
+    .home .titulos-nome {
+        top: 54%;
+        left: 6vw;
+    }
+
+    .home .texto-guilherme {
+        font-size: clamp(42px, 12vw, 68px);
+        letter-spacing: 4px;
+    }
+
+    .descricao-esquerda {
+        left: 20px;
+        bottom: 95px;
+        max-width: 62vw;
+        font-size: clamp(10px, 3vw, 13px);
+        line-height: 1.45;
+    }
+
+    .lado-esquerdo {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 35px 22px 350px;
+    }
+
+    .sobremim .titulo-sobremim {
+        font-size: clamp(95px, 24vw, 150px);
+        line-height: 0.62;
+        letter-spacing: 2px;
+    }
+
+    .caixa-texto {
+        margin-top: 35px;
+        padding: 17px;
+    }
+
+    .caixa-texto p {
+        font-size: clamp(9px, 2.6vw, 12px);
+        line-height: 1.55;
+    }
+
+    .sobremim .GuiFoto2 {
+        left: -15%;
+        width: min(105%, 520px);
+    }
+
+    .lado-direito {
+        padding: 45px 22px 125px;
+    }
+
+    .titulo-direito {
+        margin-bottom: 25px;
+        font-size: clamp(65px, 20vw, 92px);
+    }
+
+    .grade-skills {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        font-size: 12px;
+    }
+
+    .grade-skills p {
+        padding-right: 0;
+    }
+
+    .titulo-contato {
+        margin-top: 65px;
+        margin-bottom: 25px;
+        font-size: clamp(27px, 8vw, 38px);
+        letter-spacing: 3px;
+    }
+
+    .form-email textarea {
+        height: 130px;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .btn-enviar {
+        min-height: 42px;
+    }
+
+    .infos-contato {
+        overflow-wrap: anywhere;
+        font-size: 11px;
+        line-height: 2.1;
+    }
+
+    .projetos {
+        padding: 45px 20px 125px;
+    }
+
+    .cabecalho-projetos {
+        margin-bottom: 35px;
+    }
+
+    .projetos-descricao {
+        font-size: 10px;
+    }
+
+    .titulo-projetos {
+        font-size: clamp(80px, 24vw, 125px);
+        line-height: 0.8;
+        letter-spacing: 2px;
+    }
+
+    .projetos-caixa {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .projeto-card,
+    .projeto-card:nth-child(1),
+    .projeto-card:nth-child(2),
+    .projeto-card:nth-child(3) {
+        transform: none;
+    }
+
+    .projeto-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .projeto-imagem {
+        height: clamp(190px, 58vw, 270px);
+    }
+
+    .projeto-conteudo {
+        min-height: auto;
+    }
+
+    .projeto-conteudo p {
+        min-height: auto;
+    }
+
+    .projetos-instrucao {
+        margin-top: 45px;
+        padding-inline: 15px;
+        font-size: 9px;
+        line-height: 1.6;
+    }
+}
+
+
+/* ---------- Celulares pequenos ---------- */
+@media (max-width: 430px) {
+
+    .navegacao {
+        bottom: 10px;
+    }
+
+    .menu-link a {
+        font-size: 0.65rem;
+    }
+
+    .home {
+        padding-top: 22px;
+    }
+
+    .texto-esquerda {
+        font-size: clamp(96px, 28.5vw, 123px);
+    }
+
+    .home .GuiFoto {
+        top: 56%;
+        left: 66%;
+        width: 112vw;
+    }
+
+    .home .titulos-nome {
+        top: 54%;
+        left: 18px;
+    }
+
+    .home .texto-guilherme {
+        font-size: clamp(38px, 12vw, 52px);
+    }
+
+    .descricao-esquerda {
+        max-width: 72vw;
+        font-size: 10px;
+    }
+
+    .lado-esquerdo {
+        padding-inline: 17px;
+        padding-bottom: 320px;
+    }
+
+    .sobremim .titulo-sobremim {
+        font-size: clamp(88px, 23vw, 112px);
+    }
+
+    .caixa-texto {
+        padding: 14px;
+    }
+
+    .caixa-texto p {
+        font-size: 9px;
+    }
+
+    .sobremim .GuiFoto2 {
+        left: -20%;
+        width: 115%;
+    }
+
+    .lado-direito {
+        padding-inline: 17px;
+    }
+
+    .titulo-direito {
+        font-size: 63px;
+    }
+
+    .titulo-contato {
+        font-size: 26px;
+    }
+
+    .projeto-conteudo h3 {
+        font-size: 30px;
+    }
+}
+
+
+/* ---------- Telas baixas: notebooks 1366x768 e semelhantes ---------- */
+@media (max-height: 850px) and (min-width: 901px) {
+
+    .navegacao {
+        bottom: 14px;
+        padding-block: 0.7rem;
+    }
+
+    .home {
+        padding-top: 30px;
+    }
+
+    .texto-esquerda {
+        font-size: min(29vw, 51vh);
+        margin-top: -20px;
+    }
+
+    .home .titulos-nome {
+        margin-top: -60px;
+    }
+
+    .home .texto-guilherme {
+        font-size: min(4.4vw, 8vh);
+        line-height: 1;
+    }
+
+    .home .GuiFoto {
+        width: min(48vw, 72vh);
+    }
+
+    .descricao-esquerda {
+        bottom: 55px;
+    }
+
+    .lado-esquerdo,
+    .lado-direito {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .sobremim .titulo-sobremim {
+        font-size: min(13vw, 24vh);
+        line-height: 0.55;
+    }
+
+    .caixa-texto {
+        margin-top: 35px;
+        padding: 17px;
+    }
+
+    .caixa-texto p {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .sobremim .GuiFoto2 {
+        max-height: 59vh;
+        width: auto;
+        max-width: none;
+    }
+
+    .titulo-direito {
+        margin-bottom: 18px;
+        font-size: min(6vw, 12vh);
+    }
+
+    .grade-skills {
+        gap: 11px 20px;
+        font-size: 12px;
+    }
+
+    .titulo-contato {
+        margin-top: 38px;
+        margin-bottom: 15px;
+        font-size: min(3vw, 5.5vh);
+    }
+
+    .form-email textarea {
+        height: 105px;
+        padding: 15px;
+    }
+
+    .btn-enviar {
+        padding: 8px;
+    }
+
+    .infos-contato {
+        margin-top: 12px;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .projetos {
+        padding-top: 25px;
+        padding-bottom: 95px;
+    }
+
+    .cabecalho-projetos {
+        margin-bottom: 25px;
+    }
+
+    .titulo-projetos {
+        font-size: min(13vw, 24vh);
+    }
+
+    .projeto-imagem {
+        height: min(215px, 27vh);
+    }
+
+    .projeto-conteudo {
+        min-height: 135px;
+        padding: 14px;
+    }
+
+    .projeto-conteudo h3 {
+        font-size: 29px;
+    }
+
+    .projeto-conteudo p {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .projeto-tags {
+        margin-top: 10px;
+    }
+
+    .projetos-instrucao {
+        margin-top: 35px;
+    }
+}
+
+
+/* ---------- Celulares em modo paisagem ---------- */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 600px) {
+
+    .home {
+        min-height: 620px;
+    }
+
+    .texto-esquerda {
+        font-size: min(27vw, 48vh);
+    }
+
+    .home .GuiFoto {
+        top: 52%;
+        left: 64%;
+        width: min(52vw, 430px);
+    }
+
+    .home .titulos-nome {
+        top: 52%;
+    }
+
+    .home .texto-guilherme {
+        font-size: min(8vw, 13vh);
+    }
+
+    .descricao-esquerda {
+        bottom: 85px;
+    }
+
+    .lado-esquerdo,
+    .lado-direito {
+        min-height: 620px;
+    }
+
+    .lado-esquerdo {
+        padding-bottom: 250px;
+    }
+
+    .sobremim .GuiFoto2 {
+        width: min(55%, 430px);
+    }
+}
+
+
+/* ---------- Preferência por menos movimento ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .projeto-card,
+    .projeto-imagem img,
+    .projeto-overlay,
+    .seta-projeto,
+    .menu-link a::after {
+        transition: none;
+    }
+}
